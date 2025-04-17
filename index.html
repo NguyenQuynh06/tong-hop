@@ -1,87 +1,101 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
   <head>
-    <title>Tke WEB</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thiết kế Web</title>
+    <link rel="stylesheet" href="index.css">
     <style>
-      body {
-        font-family: Calibri, sans-serif;
-        margin: 100px 300px 100px 300px;
-      }
-      h1 {
-        border: 2px solid lightpink;
-        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-        font-size: 50px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: white;
-        background-color: palevioletred;
-      }
-      p {
-        border: 2px solid lightgray;
-        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-        font-size: 30px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: white;
-        background-color: white;
-      }
-      a {
-        color: palevioletred;
-        text-decoration: none;
-        position: relative;
-        display: inline-block;
-      }
-
-      a::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: -2px;
-        width: 0;
-        height: 2px;
-        background-color: palevioletred;
-        transition: width 0.3s ease-in-out;
-      }
-
-      a:hover::after {
-        width: 100%;
-      }
+    
+      
     </style>
   </head>
   <body>
-    <h1>THIẾT KẾ WEB</h1>
-    <p>
-      <a href="https://nguyenquynh06.github.io/BaiTap_Buoi1/"
-        >BUỔI 1 (13-2-25)</a
-      >
-    </p>
-    <p><a href="https://nguyenquynh06.github.io/b3/">BUỔI 3 (26-2-25)</a></p>
-    <p>
-      <a href="https://nguyenquynh06.github.io/BaiTap_Buoi4/"
-        >BUỔI 4 (5-3-25)</a
-      >
-    </p>
-    <p>
-      <a href="https://nguyenquynh06.github.io/BaiTap_Buoi5/"
-        >BUỔI 5 (12-3-25)</a
-      >
-    </p>
-    <p>
-      <a href="https://nguyenquynh06.github.io/BaiTap_Buoi6/"
-        >BUỔI 6 (19-3-25)</a
-      >
-    </p>
-    <p>
-      <a href="https://nguyenquynh06.github.io/BaiTap_Buoi7/"
-        >BUỔI 7 (26-3-25)</a
-      >
-    </p>
-    <p>
-      <a href="https://nguyenquynh06.github.io/BaiTap_Buoi8/"
-        >BUỔI 8 (9-4-25)</a
-      >
-    </p>
+    <div class="background-img"></div>
+    <!-- Ảnh nền hình mèo -->
+    <div class="container">
+      <h1>Nguyễn Thu Quỳnh</h1>
+      <div class="nav">
+        <a href="#" onclick="showContent('intro')">Giới Thiệu</a>
+        <a href="#" onclick="showContent('baiTap')">Bài Tập</a>
+      </div>
+
+      <div id="intro" class="content show">
+        <h2>Giới Thiệu</h2>
+        <p>Họ và tên: Nguyễn Thu Quỳnh</p>
+        <p>Ngày sinh: 06/11/2006</p>
+        <p>Quê quán: Hà Nội</p>
+        <p>Trình độ học vấn: Đại học</p>
+        <p>Ngành học: Công nghệ thông tin</p>
+        <p>Lớp: CNTT D2024 A</p>
+        <p>Sở thích: Xem phim, đọc truyện, đu idol</p>
+      </div>
+
+      <div id="baiTap" class="content ndung">
+        <p>
+            <a href="https://nguyenquynh06.github.io/BaiTap_Buoi1/"
+              >BUỔI 1 (13-2-25)</a
+            >
+          </p>
+          <p><a href="https://nguyenquynh06.github.io/b3/">BUỔI 3 (26-2-25)</a></p>
+          <p>
+            <a href="https://nguyenquynh06.github.io/BaiTap_Buoi4/"
+              >BUỔI 4 (5-3-25)</a
+            >
+          </p>
+          <p>
+            <a href="https://nguyenquynh06.github.io/BaiTap_Buoi5/"
+              >BUỔI 5 (12-3-25)</a
+            >
+          </p>
+          <p>
+            <a href="https://nguyenquynh06.github.io/BaiTap_Buoi6/"
+              >BUỔI 6 (19-3-25)</a
+            >
+          </p>
+          <p>
+            <a href="https://nguyenquynh06.github.io/BaiTap_Buoi7/"
+              >BUỔI 7 (26-3-25)</a
+            >
+          </p>
+          <p>
+            <a href="https://nguyenquynh06.github.io/BaiTap_Buoi8/"
+              >BUỔI 8 (9-4-25)</a
+            >
+          </p>
+          <p>
+            <a href="https://nguyenquynh06.github.io/BaiTap_Buoi9/"
+              >BUỔI 9 (16-4-25)</a
+            >
+          </p>
+          </select>
+        </div>
+
+        
+      </div>
+    </div>
+    <script>
+      function showContent(id) {
+        document
+          .querySelectorAll(".content")
+          .forEach((el) => el.classList.remove("show"));
+        document.getElementById(id).classList.add("show");
+      }
+      function showBuoi() {
+        let selectedBuoi = document.getElementById("buoi").value;
+
+        document
+          .querySelectorAll(".buoi")
+          .forEach((el) => el.classList.remove("show"));
+
+        let buoiToShow = document.getElementById(selectedBuoi);
+        if (buoiToShow) {
+          buoiToShow.classList.add("show");
+        }
+      }
+      document.addEventListener("DOMContentLoaded", function () {
+        showBuoi();
+      });
+    </script>
   </body>
 </html>
